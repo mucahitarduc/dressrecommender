@@ -93,7 +93,8 @@ def on_intent(intent_request, session):
 def dress_recommender():
     session_attributes = {}
     card_title = "Quotation Of The Day"
-    quotation = get_dress()
+    header = "Hmm... Let me think! Ahaa I think you should wear "
+    quotation = header + get_dress()
     speech_output = quotation
     reprompt_text = quotation
     should_end_session = True
