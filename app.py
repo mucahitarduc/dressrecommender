@@ -34,6 +34,7 @@ def launched():
 
 @ask.session_ended
 def session_ended():
+
     return "{}", 200
 
 # --------------- Main handler ------------------
@@ -92,8 +93,8 @@ def on_intent(intent_request, session):
 #--------------- App Functions ------------------------
 def dress_recommender():
     session_attributes = {}
-    card_title = "Quotation Of The Day"
-    header = "Hmm... Let me think! Ahaa I think you should wear "
+    card_title = "Dress Of The Day"
+    header = "Hmm... Let me think! Ahaa I think, you should wear "
     quotation = header + get_dress()
     speech_output = quotation
     reprompt_text = quotation
@@ -105,11 +106,11 @@ def dress_recommender():
 def get_dress():
     now = datetime.datetime.now()
     day = now.day
-    return quotation_list[int(day)%8]
+    return quotation_list[int(day)%7]
 
 
 #---------------- Dress List ----------------------------
-quotation_list = ("Nicely fitted tops and blouses, although shirts should never be tight or revealing.", "Slacks or skirts in more casual fabrics, such as cotton. If denim is permitted, dark-wash only. Avoid overly casual denim cuts, like cutoffs or flare jeans.", "Skirts should remain at knee-length.", "Open-toed shoes are permitted. Avoid casual shoes such as sneakers or flip-flops.", "Casual accessories, such as scarves. Larger rings, bracelets, earrings, and necklaces are fine, and may be of any quality.", "More leeway with hair length, style, and color. More adventurous styles and colors are typically fine.", "Nails can be painted in brighter colors, or with any type of pattern. Avoid novelty characters or designs, or limit “louder” designs to one nail only.")
+quotation_list = ("Nicely fitted tops and blouses, although shirts should never be tight or revealing.", "Slacks or skirts in more casual fabrics, such as cotton. If denim is permitted, dark-wash only. Avoid overly casual denim cuts, like cutoffs or flare jeans.", "Skirts should remain at knee-length.", "Open-toed shoes are permitted. Avoid casual shoes such as sneakers or flip-flops.", "Casual accessories, such as scarves. Larger rings, bracelets, earrings, and necklaces are fine, and may be of any quality.", "More leeway with hair length, style, and color. More adventurous styles and colors are typically fine.", "Nails can be painted in brighter colors, or with any type of pattern. Avoid novelty characters or designs, or limit louder designs to one nail only.")
 
 
 if __name__ == '__main__':
