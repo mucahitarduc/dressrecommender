@@ -86,7 +86,7 @@ def on_intent(intent_request, session):
 
     intent = intent_request['intent']
     intent_name = intent_request['intent']['name']
-    if intent_name == "quotationOfTheDay":
+    if intent_name == "dress_recommender":
         return dress_recommender()
 
 
